@@ -56,10 +56,9 @@ body {
   width: 25%;
 }
 
-#main {
-}
 
 #header {
+  z-index: 1000;
   width: 100%;
   height: 46px;
   background-color: black;
@@ -141,14 +140,14 @@ ion-icon {
   font-size: 20px;
 }
 
-#slider {
-  /* min-height: 1000px;
-  background-color: gray; */
+.mySlides {
   position: relative;
-  margin-top: 46px;
-  padding-top: 50%;
-  background: url("../img/LA.jpg") top center / cover no-repeat;
   z-index: -1;
+}
+
+.mySlides img{
+  /* margin-top: 40px; */
+  width: 100%;
 }
 
 .text-content {
@@ -160,21 +159,19 @@ ion-icon {
   text-align: center;
 }
 
-#slider .text-heading {
+.mySlides .text-heading {
   font-weight: 500;
-  font-size: 28px;
+  font-size: 32px;
   text-shadow: 2px 2px 2px #000;
 }
 
-#slider .text-description {
-  font-size: 17px;
-  font-weight: bolder;
-  margin-top: 25px;
+.mySlides .text-description {
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 20px;
   text-shadow: 2px 2px 2px #000;
 }
 
-#content {
-}
 
 #content .content-section {
   width: 800px;
@@ -202,8 +199,8 @@ ion-icon {
   margin-top: 10px;
   margin-bottom: 20px;
   font-style: italic;
-  /* color: gray; */
-  opacity: 0.65;
+  color: gray;
+  /* opacity: 0.65; */
 }
 
 #content .content-section .about-band {
@@ -394,6 +391,10 @@ ion-icon {
   color: #282828;
   font-size: 36px;
   padding: 12px 4px 8px;
+}
+
+#footer .social-list a{
+  text-decoration: none;
 }
 
 #footer > .social-list > a > ion-icon:hover {
