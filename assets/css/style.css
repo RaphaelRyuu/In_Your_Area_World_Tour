@@ -69,7 +69,7 @@ body {
 	top: 0;
 	right: 0;
 	left: 0;
-	/* overflow: hidden; */
+	overflow: hidden;
 }
 
 #nav {
@@ -94,7 +94,8 @@ body {
 }
 
 #nav .subnav li:hover > a,
-#nav > li:hover > a {
+#nav > li:hover > a,
+#nav > li:hover > a > ion-icon {
 	color: #000;
 	background-color: #ccc;
 }
@@ -126,10 +127,28 @@ body {
 	line-height: 38px;
 }
 
+#header .mobile-menu{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+#header .mobile-menu,
 #header .search-icon {
 	float: right;
 	line-height: 46px;
 	padding: 0 21px;
+}
+
+#header .mobile-menu:hover,
+#header .search-icon:hover{
+	cursor: pointer;
+	background-color: #ccc;
+}
+
+#header .mobile-menu:hover > ion-icon,
+#header .search-icon:hover > ion-icon{
+	color: #000;
 }
 
 ion-icon {
@@ -474,9 +493,6 @@ ion-icon {
 	animation: fadein linear 0.1s;
 }
 
-.modal.open {
-	display: flex;
-}
 
 .modal .modal-container {
   --growth-from: 0.5;

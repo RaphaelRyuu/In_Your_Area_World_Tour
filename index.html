@@ -25,7 +25,7 @@
         <li><a href="#contact">Contact</a></li>
         <li>
           <a href="#">More
-            <ion-icon class="dropdown_arrow" name="arrow-dropdown"></ion-icon>
+            <ion-icon class="dropdown_arrow" name="arrow-dropdown" style="transform: translate(-2px, 3px);"></ion-icon>
           </a>
           <ul class="subnav">
             <li><a href="#">Merchandise</a></li>
@@ -35,7 +35,10 @@
         </li>
       </ul>
       <div class="search-icon">
-        <ion-icon id="search-btn" name="search"></ion-icon>
+        <ion-icon id="search-btn" name="search" style="transform: translateY(2px)"></ion-icon>
+      </div>
+      <div class="mobile-menu">
+        <ion-icon name="menu"></ion-icon>
       </div>
     </div>
     <!-- automatic slideshow image -->
@@ -264,7 +267,7 @@
           <ion-icon name="logo-twitter"></ion-icon>
         </a>
       </div>
-      <a href="https://www.ygfamily.com/artist/Main.asp?LANGDIV=E&ATYPE=2&ARTIDX=70" target="-blank">      
+      <a href="https://www.ygfamily.com/artist/Main.asp?LANGDIV=E&ATYPE=2&ARTIDX=70" target="-blank">
         <img src="./assets/img/logos/Blackpink.png" alt="" class="logo">
       </a>
       <div class="ygent">
@@ -274,9 +277,8 @@
       </div>
     </div>
   </div>
-  </div>
 
-  <div class="modal">
+  <div class="modal" style="display: none;">
     <div class="modal-container">
       <button class="modal-close">
         <ion-icon class="black-icon" name="close"></ion-icon>
@@ -307,39 +309,69 @@
 
   <script>
     // Automatic Slideshow - change image every 4 seconds
-    var myIndex = 0;
-    carousel();
+    // var myIndex = 0;
+    // slideForward();
 
-    function carousel() {
-      var i;
-      var x = document.getElementsByClassName("mySlides");
-      for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
-      }
-      myIndex++;
-      if (myIndex > x.length) { myIndex = 1 }
-      x[myIndex - 1].style.display = "block";
-      setTimeout(carousel, 4000);
-    }
-// modal script
+    // function slideForward() {
+    //   var i;
+    //   var x = document.getElementsByClassName("mySlides");
+    //   for (i = 0; i < x.length; i++) {
+    //     x[i].style.display = "none";
+    //   }
+    //   myIndex++;
+    //   if (myIndex > x.length) { myIndex = 1 }
+    //   x[myIndex - 1].style.display = "block";
+    //   setTimeout(slideForward, 4000);
+    // }
+    // modal script
     const buyBtns = document.querySelectorAll('.js-buy-ticket')
     const modal = document.querySelector('.modal')
     const closeBtn = document.querySelector('.modal-close')
 
     function showModal() {
-      modal.classList.add('open')
+      modal.style.display = 'flex';
     }
 
     function closeModal() {
-      modal.classList.remove("open")
+      modal.style.display = 'none'
     }
 
     for (const buyBtn of buyBtns) {
       buyBtn.addEventListener('click', showModal)
     }
+    // When the user clicks anywhere outside of the modal, close it
+    var modalclose = document.querySelector('.modal-container')
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
 
     closeBtn.addEventListener('click', closeModal)
+    // header navigation mobile layout responsive
+    var header = document.querySelector('#header');
+    var mobileMenu = document.querySelector('.mobile-menu')
+    var headerHeight = header.clientHeight;
 
+    // open/hide mobile-menu
+    mobileMenu.onclick = function () {
+      var isClose = header.clientHeight === headerHeight;
+      if (isClose) {
+        header.style.height = 'auto';
+      }
+      else {
+        header.style.height = null;
+      }
+    }
+
+    //auto hide mobile-menu when tap in header navigation on mobile layout
+    var menuItems = document.querySelectorAll(' #nav li a[href*="#"]');
+    for (var i = 0; i < menuItems.length; i++){
+      var menuItem = menuItems[i];
+      menuItem.onclick = function(){
+        header.style.height = null;
+      }
+    }
   </script>
 </body>
 
