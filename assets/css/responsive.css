@@ -1,17 +1,58 @@
 /* PC */
-@media (min-width: 1024px){ 
+@media (min-width: 64em){ 
 
 }
 
+/* Tablet & Mobile */
+@media (max-width: 63.9375em){
+    .buy-btn{
+        padding: 16px 16px;
+    }
 
+    .contact-content .contact-form .form-field {
+        padding: 15px;
+    }
+
+    #footer a {
+        margin: 0 16px;
+    }
+
+    #footer > .social-list > a > ion-icon{
+        font-size: 48px;
+        padding: 16px 8px;
+    }
+
+    #footer .logo{
+        max-width: 200px;
+    }
+
+    .modal-input{
+        padding: 16px 10px;
+    }
+
+    #pay-btn{
+        height: 52px;
+    }
+
+    .modal-help a{
+        padding: 12px 0;
+    }
+
+}
 
 /* Tablet */
-@media (min-width: 740px) and (max-width: 1023px) {
-    
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+    #nav .sub-nav a{
+        padding: 5px 12px;
+    }    
 }
 
 /* Mobile */
-@media (max-width: 739px){
+@media (max-width: 46.1875em){
+    #header{
+	overflow: hidden;
+    }
+
     #nav{
         display: block;
     }
@@ -24,11 +65,56 @@
         display: inline-block;
     }
 
+    #nav li a{
+        padding: 1px 24px;
+    }
+
+    #nav .subnav{
+        background-color: #333;
+        position: initial;
+    }
+
+    #nav .subnav a{
+        color: #fff;
+        padding: 5px 41px;
+    }
+
     #header .mobile-menu{
         display: block;
     }
 
     #header .search-icon{
         display: none;
+    }
+
+    #content .members-list{
+        padding-bottom: 12px;
+    }
+
+    #content .member-item{
+        margin-bottom: 24px;
+        width: 100%;
+    }
+
+    #content .members-list .col > img{
+        width: 60%;
+    }
+    
+    #content .tour-section{
+        padding-bottom: 16px;
+    }
+
+    .s-full-width,
+    .s-full-col{
+        width: 100% !important;
+        margin-bottom: 24px;
+    }
+    
+    .contact-content {
+        margin: 30px 0 0px;
+    }
+
+    .contact-form .row .col{
+        margin-bottom: 8px;
     }
 }
